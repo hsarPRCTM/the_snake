@@ -34,6 +34,12 @@ DIRECTIONS = {
     pygame.K_RIGHT: RIGHT
 }
 
+# Инициализация Pygame
+pygame.init()
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption('Змейка')
+clock = pygame.time.Clock()
+
 
 class GameObject:
     """Базовый класс для игровых объектов."""
@@ -221,12 +227,6 @@ def handle_keys(snake):
 
 def main():
     """Основная функция игры."""
-    # Инициализация Pygame
-    pygame.init()
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    pygame.display.set_caption('Змейка')
-    clock = pygame.time.Clock()
-
     # Создание объектов
     snake = Snake()
     apple = Apple()
